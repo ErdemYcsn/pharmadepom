@@ -1,0 +1,9 @@
+[phases.setup]
+nixPkgs = ["php83", "php83Packages.composer"]
+```
+
+Yazıp `Ctrl + S` ile kaydedin. Sonra terminalde:
+```
+git add .
+git commit -m "php versiyon guncellendi"
+git push
