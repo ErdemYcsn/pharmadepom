@@ -1,9 +1,11 @@
 [phases.setup]
 nixPkgs = ["php83", "php83Packages.composer"]
-```
 
-Yazıp `Ctrl + S` ile kaydedin. Sonra terminalde:
-```
-git add .
-git commit -m "php versiyon guncellendi"
-git push
+[phases.install]
+cmds = ["composer install --optimize-autoloader --no-dev --no-interaction"]
+
+[phases.build]
+cmds = []
+
+[start]
+cmd = "php artisan serve --host=0.0.0.0 --port=$PORT"
