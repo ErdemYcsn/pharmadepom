@@ -159,7 +159,7 @@
     <a href="#">Ürünler</a>
     <a href="#">Depolar</a>
     <a href="#">Kategoriler</a>
-    <a href="#">Fiyat Listesi</a>
+    <a href="#">Outlet</a>
     <a href="#">Destek</a>
   </div>
   <div class="nav-right">
@@ -492,7 +492,7 @@
         <a href="#">Ürünler</a>
         <a href="#">Depolar</a>
         <a href="#">Kategoriler</a>
-        <a href="#">Fiyat Listesi</a>
+        <a href="#">Outlet</a>
         <a href="#">Mobil Uygulama</a>
       </div>
       <div class="footer-col">
