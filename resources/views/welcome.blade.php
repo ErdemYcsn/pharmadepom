@@ -163,8 +163,8 @@
     <a href="#">Destek</a>
   </div>
   <div class="nav-right">
-    <button class="btn-outline">Eczane Girişi</button>
-    <button class="btn-primary">Depo Girişi</button>
+    <a href="/eczane/giris" class="btn-outline">Eczane Girişi</a>
+    <a href="/depo/giris" class="btn-primary">Depo Girişi</a>
   </div>
 </nav>
 
@@ -174,8 +174,8 @@
   <h1>İlaç Depolarından<br><span>Doğrudan Eczanenize</span></h1>
   <p>Yüzlerce depodan binlerce ürünü karşılaştırın, en uygun fiyatla sipariş verin. Güvenli, hızlı ve tamamen dijital.</p>
   <div class="hero-actions">
-    <button class="btn-hero btn-hero-white">Hemen Alışveriş Yap</button>
-    <button class="btn-hero btn-hero-ghost">Depo Olarak Katıl</button>
+    <a href="/urunler" class="btn-hero btn-hero-white">Hemen Alışveriş Yap</a>
+    <a href="/depo/kayit" class="btn-hero btn-hero-ghost">Depo Olarak Katıl</a>
   </div>
   <div class="hero-stats">
     <div class="stat"><div class="stat-num">1.200+</div><div class="stat-lbl">Kayıtlı Eczane</div></div>
