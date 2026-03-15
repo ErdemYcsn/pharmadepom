@@ -447,7 +447,7 @@
       <div class="testi-text">"Birden fazla depodan fiyat karşılaştırması yapmak artık çok kolay. Aylık maliyetimiz %12 düştü."</div>
       <div class="testi-author">
         <div class="avatar" style="background:#0057b8">AK</div>
-        <div><div class="testi-name">Ecz. Ayşe Kılıç</div><div class="testi-role">Kılıç Eczanesi, İstanbul</div></div>
+        <div><div class="testi-name">Doç. Dr. Canan Bulut</div><div class="testi-role">Bulut Eczanesi, İstanbul</div></div>
       </div>
     </div>
     <div class="testi">
