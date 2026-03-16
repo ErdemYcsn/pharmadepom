@@ -9,8 +9,9 @@ use App\Http\Controllers\DepolaController;
 Route::get('/', function () {
     return view('welcome');
 });
+
 // Ürünler
-Route::get('/urunler', [UrunController::class, 'index'])->name('urunler');
+Route::get('/urunler', [UrunController::class, 'index'])->name('urunler.index');
 
 // Depolar
 Route::get('/depolar', [DepolaController::class, 'index'])->name('depolar');

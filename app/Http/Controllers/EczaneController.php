@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Eczane;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class EczaneController extends Controller
 {
@@ -21,8 +25,26 @@ class EczaneController extends Controller
             'password'   => 'required|min:8|confirmed',
         ]);
 
-        // Kullanıcı kaydı sonraki adımda eklenecek
-        return redirect('/eczane/giris')->with('success', 'Kayıt başarılı! Giriş yapabilirsiniz.');
+        $user = User::create([
+            'name'     => $request->ad_soyad,
+            'email'    => $request->email,
+            'password' => Hash::make($request->password),
+            'role'     => 'eczane',
+            'telefon'  => $request->telefon,
+            'sehir'    => $request->sehir,
+        ]);
+
+        Eczane::create([
+            'user_id'    => $user->id,
+            'eczane_adi' => $request->eczane_adi,
+            'ad_soyad'   => $request->ad_soyad,
+            'telefon'    => $request->telefon,
+            'sehir'      => $request->sehir,
+        ]);
+
+        Auth::login($user);
+
+        return redirect('/eczane/panel')->with('success', 'Kayıt başarılı! Hoş geldiniz.');
     }
 
     public function girisForm()
@@ -37,12 +59,23 @@ class EczaneController extends Controller
             'password' => 'required',
         ]);
 
-        // Giriş mantığı sonraki adımda eklenecek
+        $user = User::where('email', $request->email)->where('role', 'eczane')->first();
+
+        if (!$user || !Hash::check($request->password, $user->password)) {
+            return back()->with('error', 'E-posta veya şifre hatalı!');
+        }
+
+        Auth::login($user);
+
         return redirect('/eczane/panel');
     }
 
     public function panel()
     {
+        if (!Auth::check() || !Auth::user()->isEczane()) {
+            return redirect('/eczane/giris')->with('error', 'Lütfen giriş yapın.');
+        }
+
         return view('eczane.panel');
     }
 }
